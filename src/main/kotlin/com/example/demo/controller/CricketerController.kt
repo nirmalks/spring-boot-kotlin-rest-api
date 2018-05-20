@@ -19,13 +19,13 @@ import org.springframework.web.bind.annotation.RequestMapping
 @RequestMapping("/api")
 class CricketerController(private val cricketerService: CricketerService , private val cricketerRepository: CricketerRepository){
 	
-	@GetMapping("/api/cricketers/{id}")
+	@GetMapping("/cricketers/{id}")
 	fun getCricketer(@PathVariable("id") id: Long):ResponseEntity<Cricketer>  {
 		val cricketer = cricketerService.findById(id)
 		return ResponseEntity<Cricketer>(cricketer as Cricketer, HttpStatus.OK);
 	}
 	
-	@GetMapping("/api/cricketers/")
+	@GetMapping("/cricketers/")
 	fun getAllCricketers() :ResponseEntity<List<Cricketer>>  {
 		println("inside get all criceketers")
 		var cricketersList: ArrayList<Cricketer> =  cricketerService.getAllPlayers() as (ArrayList<Cricketer>)
