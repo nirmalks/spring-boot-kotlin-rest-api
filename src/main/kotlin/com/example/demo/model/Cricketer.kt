@@ -1,3 +1,4 @@
+package com.example.demo.model
 import javax.persistence.GeneratedValue
 import javax.persistence.Id
 import javax.persistence.Entity
